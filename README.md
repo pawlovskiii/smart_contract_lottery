@@ -1,0 +1,2 @@
+# Smart Contract Lottery
+This is going to be an example of a full scale application using Brownie and all the features I learned so far. The goal is to create a lottery application where anybody can enter the lottery and a random winner is selected.
