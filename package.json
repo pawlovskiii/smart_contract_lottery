@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/pawlovskiii/smart_contract_lottery/issues"
   },
-  "homepage": "https://github.com/pawlovskiii/smart_contract_lottery#readme"
+  "homepage": "https://github.com/pawlovskiii/smart_contract_lottery#readme",
+  "dependencies": {
+    "prettier-plugin-solidity": "^1.0.0-beta.19"
+  }
 }
