@@ -45,7 +45,13 @@ contract Lottery {
 		return costToEnter;
 	}
 
-	function startLottery() public {}
+	function startLottery() public {
+		require(
+			lottery_state == LOTTERY_STATE.CLOSED,
+			"Can't start a new lottery yet!"
+		);
+		lottery_state = LOTTERY_STATE.OPEN;
+	}
 
 	function endLottery() public {}
 }
