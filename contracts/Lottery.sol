@@ -54,5 +54,5 @@ contract Lottery is Ownable{
 		lottery_state = LOTTERY_STATE.OPEN;
 	}
 
-	function endLottery() public {}
+	function endLottery() public onlyOwner {}
 }
