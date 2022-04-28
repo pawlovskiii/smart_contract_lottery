@@ -5,7 +5,7 @@ import '@chainlink/contracts/src/v0.6/interfaces/AggregatorV3Interface.sol';
 import '@openzeppelin/contracts/access/Ownable.sol';
 import '@chainlink/contracts/src/v0.6/VRFConsumerBase.sol';
 
-contract Lottery is Ownable {
+contract Lottery is VRFConsumerBase, Ownable {
 	address payable[] public players;
 	uint256 public usdEntryFee;
 	AggregatorV3Interface internal ethUsdPriceFeed;
