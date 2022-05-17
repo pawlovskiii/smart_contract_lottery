@@ -15,15 +15,25 @@ contract Lottery is VRFConsumerBase, Ownable {
 		CALCULATING_WINNER
 	}
 	LOTTERY_STATE public lottery_state;
+	uint256 public fee;
+	bytes32 public keyhash;
 
 	// 0
 	// 1
 	// 2
 
-	constructor(address _priceFeedAddress) public {
+	constructor(
+		address _priceFeedAddress,
+		address _vrfCoordinator,
+		address _link,
+		uint256 _fee,
+		bytes32 _keyhash
+	) public VRFConsumerBase(_vrfCoordinator, _link) {
 		usdEntryFee = 50 * (10**18);
 		ethUsdPriceFeed = AggregatorV3Interface(_priceFeedAddress);
 		lottery_state = LOTTERY_STATE.CLOSED; // 1
+		fee = _fee;
+		keyhash = _keyhash;
 	}
 
 	function enter() public payable {
