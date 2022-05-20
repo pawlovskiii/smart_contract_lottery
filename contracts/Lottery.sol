@@ -69,7 +69,7 @@ contract Lottery is VRFConsumerBase, Ownable {
 
 	function endLottery() public onlyOwner {
 		lottery_state = LOTTERY_STATE.CALCULATING_WINNER;
-		bytes32 requestId = requestRandomness(_keyHash, _fee);
+		bytes32 requestId = requestRandomness(keyhash, fee);
 	}
 
 	function fulfillRandomness(bytes32 _requestId, uint256 _randomness)
