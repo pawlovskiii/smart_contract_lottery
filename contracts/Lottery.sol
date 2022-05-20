@@ -78,5 +78,6 @@ contract Lottery is VRFConsumerBase, Ownable {
 			lottery_state == LOTTERY_STATE.CALCULATING_WINNER,
 			"You aren't there yet!"
 		);
+		require(_randomness > 0, 'random-not-found');
 	}
 }
