@@ -73,5 +73,10 @@ contract Lottery is VRFConsumerBase, Ownable {
 	function fulfillRandomness(bytes32 _requestId, uint256 _randomness)
 		internal
 		override
-	{}
+	{
+		require(
+			lottery_state == LOTTERY_STATE.CALCULATING_WINNER,
+			"You aren't there yet!"
+		);
+	}
 }
