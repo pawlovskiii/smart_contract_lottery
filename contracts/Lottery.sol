@@ -8,6 +8,7 @@ import '@chainlink/contracts/src/v0.6/VRFConsumerBase.sol';
 contract Lottery is VRFConsumerBase, Ownable {
 	address payable[] public players;
 	address public recentWinner;
+	uint256 public randomness;
 	uint256 public usdEntryFee;
 	AggregatorV3Interface internal ethUsdPriceFeed;
 	enum LOTTERY_STATE {
@@ -86,5 +87,6 @@ contract Lottery is VRFConsumerBase, Ownable {
 		// Reset
 		players = new address payable[](0);
 		lottery_state = LOTTERY_STATE.CLOSED;
+		randomness = _randomness;
 	}
 }
