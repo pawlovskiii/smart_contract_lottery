@@ -14,6 +14,9 @@ def get_account(index=None, id=None):
     return accounts.add(config["wallets"]["from_key"])
 
 
+contract_to_mock = {"eth_usd_price_feed": MockV3Aggregator}
+
+
 def get_contract(contract_name):
     """
     This function will grab the contract addresses from the brownie config if defined, otherwise, it'll deploy a mock version of that contract, and return that mock contract.
@@ -24,3 +27,4 @@ def get_contract(contract_name):
         Returns:
             brownie.network.contract.ProjectContract: The most recently deployed version of this contract.
     """
+    contract_type = contract_to_mock[contract_name]
