@@ -1,4 +1,4 @@
-from brownie import network, accounts, config
+from brownie import network, accounts, config, MockV3Aggregator
 
 FORKED_LOCAL_ENVIRONMENTS = ["mainnet-fork", "mainnet-fork-dev"]
 LOCAL_BLOCKCHAIN_ENVIRONMENTS = ["development", "ganache-local"]
