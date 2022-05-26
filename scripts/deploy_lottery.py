@@ -1,4 +1,5 @@
 from scripts.helpful_scripts import get_account
+from brownie import Lottery
 
 
 def deploy_lottery():
