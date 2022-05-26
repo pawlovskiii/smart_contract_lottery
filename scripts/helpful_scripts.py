@@ -12,3 +12,15 @@ def get_account(index=None, id=None):
     if network.show_active() in LOCAL_BLOCKCHAIN_ENVIRONMENTS or network.show_active() in FORKED_LOCAL_ENVIRONMENTS:
         return accounts[0]
     return accounts.add(config["wallets"]["from_key"])
+
+
+def get_contract():
+    """
+    This function will grab the contract addresses from the brownie config if defined, otherwise, it'll deploy a mock version of that contract, and return that mock contract.
+
+        Args:
+            contract_name (string)
+
+        Returns:
+            brownie.network.contract.ProjectContract: The most recently deployed version of this contract.
+    """
