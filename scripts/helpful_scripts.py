@@ -28,3 +28,11 @@ def get_contract(contract_name):
             brownie.network.contract.ProjectContract: The most recently deployed version of this contract.
     """
     contract_type = contract_to_mock[contract_name]
+
+
+DECIMALS = 8
+INITIAL_VALUE = 200000000000
+
+
+def deploy_mocks(decimals=DECIMALS, initial_value=INITIAL_VALUE):
+    pass
