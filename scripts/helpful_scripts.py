@@ -29,7 +29,9 @@ def get_contract(contract_name):
     """
     contract_type = contract_to_mock[contract_name]
     if network.show_active() in LOCAL_BLOCKCHAIN_ENVIRONMENTS:
-        pass
+        if len(contract_type) <= 0:
+            # MockV3Aggregator.length
+            deploy_mocks
 
 
 DECIMALS = 8
