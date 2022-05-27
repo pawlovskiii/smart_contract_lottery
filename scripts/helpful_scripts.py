@@ -35,4 +35,5 @@ INITIAL_VALUE = 200000000000
 
 
 def deploy_mocks(decimals=DECIMALS, initial_value=INITIAL_VALUE):
-    pass
+    account = get_account()
+    MockV3Aggregator.deploy(decimals, initial_value, {"from": account})
