@@ -1,4 +1,4 @@
-from brownie import network, accounts, config, MockV3Aggregator
+from brownie import Contract, network, accounts, config, MockV3Aggregator
 
 FORKED_LOCAL_ENVIRONMENTS = ["mainnet-fork", "mainnet-fork-dev"]
 LOCAL_BLOCKCHAIN_ENVIRONMENTS = ["development", "ganache-local"]
@@ -34,6 +34,11 @@ def get_contract(contract_name):
             deploy_mocks
         contract = contract_type[-1]
         # MockV3Aggregator[-1]
+    else:
+        # We're also going to want to deploy to the TestNets
+        contract_address = config["networks"][network.show_active()][contract_name]
+        contract = Contract.from_abi(contract_type._name, contract_address, contract_type.abi)
+    return contract
 
 
 DECIMALS = 8
