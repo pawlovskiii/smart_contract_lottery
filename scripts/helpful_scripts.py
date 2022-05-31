@@ -1,4 +1,4 @@
-from brownie import Contract, network, accounts, config, MockV3Aggregator
+from brownie import Contract, network, accounts, config, MockV3Aggregator, VRFCoordinatorMock
 
 FORKED_LOCAL_ENVIRONMENTS = ["mainnet-fork", "mainnet-fork-dev"]
 LOCAL_BLOCKCHAIN_ENVIRONMENTS = ["development", "ganache-local"]
@@ -14,7 +14,7 @@ def get_account(index=None, id=None):
     return accounts.add(config["wallets"]["from_key"])
 
 
-contract_to_mock = {"eth_usd_price_feed": MockV3Aggregator}
+contract_to_mock = {"eth_usd_price_feed": MockV3Aggregator, "vrf_coordinator": VRFCoordinatorMock}
 
 
 def get_contract(contract_name):
