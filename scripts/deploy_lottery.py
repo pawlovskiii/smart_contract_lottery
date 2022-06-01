@@ -10,6 +10,8 @@ def deploy_lottery():
         get_contract("link_token").address,
         config["networks"][network.show_active()]["fee"],
         config["networks"][network.show_active()]["keyhash"],
+        {"from": account},
+        
     )
 
 
