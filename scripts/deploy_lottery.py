@@ -9,6 +9,7 @@ def deploy_lottery():
         get_contract("vrf_coordinator").address,
         get_contract("link_token").address,
         config["networks"][network.show_active()]["fee"],
+        config["networks"][network.show_active()]["keyhash"],
     )
 
 
