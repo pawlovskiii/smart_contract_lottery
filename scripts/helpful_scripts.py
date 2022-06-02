@@ -54,4 +54,6 @@ def deploy_mocks(decimals=DECIMALS, initial_value=INITIAL_VALUE):
     account = get_account()
     print("Deploying Mocks...")
     MockV3Aggregator.deploy(decimals, initial_value, {"from": account})
+    link_token = LinkToken.deploy({"from": account})
+    VRFCoordinatorMock.deploy(link_token.address, {"from": account})
     print("Mocks Deployed!")
