@@ -18,6 +18,9 @@ def deploy_lottery():
 def start_lottery():
     account = get_account()
     lottery = Lottery[-1]
+    starting_tx = lottery.startLottery({"from": account})
+    starting_tx.wait(1)
+    print("The lottery is started!")
 
 
 def main():
