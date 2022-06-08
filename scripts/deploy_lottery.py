@@ -17,6 +17,7 @@ def deploy_lottery():
 
 def start_lottery():
     account = get_account()
+    lottery = Lottery[-1]
 
 
 def main():
