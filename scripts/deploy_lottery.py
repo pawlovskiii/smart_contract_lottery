@@ -25,3 +25,4 @@ def start_lottery():
 
 def main():
     deploy_lottery()
+    start_lottery()
