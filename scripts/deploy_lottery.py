@@ -23,6 +23,10 @@ def start_lottery():
     print("The lottery is started!")
 
 
+def enter_lottery():
+    account = get_account()
+
+
 def main():
     deploy_lottery()
     start_lottery()
