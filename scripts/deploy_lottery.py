@@ -25,6 +25,7 @@ def start_lottery():
 
 def enter_lottery():
     account = get_account()
+    lottery = Lottery[-1]
 
 
 def main():
