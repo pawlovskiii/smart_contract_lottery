@@ -32,6 +32,11 @@ def enter_lottery():
     print("You entered the lottery!")
 
 
+def end_lottery():
+    account = get_account()
+    lottery = Lottery[-1]
+
+
 def main():
     deploy_lottery()
     start_lottery()
