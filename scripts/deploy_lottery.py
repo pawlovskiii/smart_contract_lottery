@@ -35,3 +35,4 @@ def enter_lottery():
 def main():
     deploy_lottery()
     start_lottery()
+    enter_lottery()
