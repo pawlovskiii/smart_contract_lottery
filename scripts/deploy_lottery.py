@@ -26,6 +26,7 @@ def start_lottery():
 def enter_lottery():
     account = get_account()
     lottery = Lottery[-1]
+    value = lottery.getEntranceFee() + 100000000
 
 
 def main():
