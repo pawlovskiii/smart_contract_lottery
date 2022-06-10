@@ -59,5 +59,5 @@ def deploy_mocks(decimals=DECIMALS, initial_value=INITIAL_VALUE):
     print("Mocks Deployed!")
 
 
-def fund_with_link(contract_address, accountPar=None, link_token=None, amount=100000000000000000):  # 0.1 Link
-    account = accountPar if accountPar else get_account()
+def fund_with_link(contract_address, accountArg=None, link_token=None, amount=100000000000000000):  # 0.1 Link
+    account = accountArg if accountArg else get_account()
